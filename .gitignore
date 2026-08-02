@@ -1,0 +1,14 @@
+# Windowsの不要ファイル
+*.Zone.Identifier
+Thumbs.db
+
+# macOSの不要ファイル
+.DS_Store
+
+# 一時ファイル・ログ
+*.tmp
+*.log
+
+# 認証トークン（絶対にコミットしない）
+*.token
+.token
