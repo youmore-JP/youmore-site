@@ -640,6 +640,7 @@ h1 a .logoName span {
   border-radius: 12px;
   overflow: hidden;
   background: var(--bg-soft);
+  min-height: 420px;
   aspect-ratio: 3 / 5;
 }
 
@@ -1182,6 +1183,7 @@ footer {
   }
 
   .servicePanelImg {
+    min-height: 260px;
     aspect-ratio: 4 / 3;
   }
 
