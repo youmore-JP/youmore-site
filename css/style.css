@@ -645,12 +645,10 @@ h1 a .logoName span {
 }
 
 .servicePanelImg img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.01);
   transition: transform 1s var(--ease);
 }
 
@@ -1183,8 +1181,9 @@ footer {
   }
 
   .servicePanelImg {
-    min-height: 260px;
-    aspect-ratio: 4 / 3;
+    height: 260px;
+    min-height: 0;
+    aspect-ratio: auto;
   }
 
   .idxWrap03Inner {
