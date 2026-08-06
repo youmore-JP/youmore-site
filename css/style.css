@@ -1403,6 +1403,26 @@ footer {
   color: rgba(255, 255, 255, .88);
 }
 
+.pageHeroCue {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, .3);
+  overflow: hidden;
+}
+
+.pageHeroCue span {
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #fff;
+  animation: scrollCue 2s var(--ease) infinite;
+}
+
 .pageSec {
   border-bottom: 1px solid var(--line);
 }
@@ -1438,6 +1458,60 @@ footer {
   color: var(--muted);
 }
 
+.pageStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 64px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pageStat {
+  position: relative;
+  text-align: center;
+  padding: 44px 24px 40px;
+}
+
+.pageStat + .pageStat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 56%;
+  background: var(--line);
+}
+
+.pageStatValue {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--blue);
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pageStatValue > span {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-left: 2px;
+}
+
+.pageStatValue .pageStatSub {
+  font-size: 22px;
+}
+
+.pageStatLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--muted);
+}
+
 .supportGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1445,24 +1519,44 @@ footer {
 }
 
 .supportCard {
+  position: relative;
   background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 34px 30px 38px;
+  border-radius: 14px;
+  padding: 40px 30px 42px;
+  overflow: hidden;
   transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+
+.supportCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), #9db4e8);
 }
 
 .supportCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(19, 24, 32, .08);
+  box-shadow: 0 18px 44px rgba(19, 24, 32, .1);
 }
 
 .supportNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  color: var(--blue);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: .2em;
-  color: var(--blue);
-  margin-bottom: 16px;
+  letter-spacing: .06em;
+  margin-bottom: 20px;
 }
 
 .supportCard h3 {
@@ -1506,6 +1600,46 @@ footer {
   font-weight: 500;
   color: var(--muted);
   padding: 24px 26px;
+}
+
+.flowSteps {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flowSteps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 10px 0;
+}
+
+.flowSteps li + li::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--blue);
+  opacity: .45;
+  margin: 0 20px 0 0;
+}
+
+.flowSteps li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  flex: 0 0 30px;
 }
 
 .pageNote {
@@ -1582,6 +1716,13 @@ footer {
   text-decoration: underline;
 }
 
+/* ============================================================
+   mobile fixed CTA bar (detail page only)
+============================================================ */
+.spCtaBar {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .supportGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -1601,6 +1742,10 @@ footer {
     padding-bottom: 48px;
   }
 
+  .pageHeroCue {
+    display: none;
+  }
+
   .pageSecInr {
     padding: 80px 20px;
   }
@@ -1609,8 +1754,66 @@ footer {
     margin-bottom: 40px;
   }
 
+  .pageText p {
+    font-size: 14.5px;
+  }
+
+  .pageStats {
+    margin-top: 48px;
+    border-radius: 14px;
+  }
+
+  .pageStat {
+    padding: 30px 8px 28px;
+  }
+
+  .pageStatValue {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .pageStatValue > span {
+    font-size: 13px;
+  }
+
+  .pageStatValue .pageStatSub {
+    font-size: 17px;
+  }
+
+  .pageStatLabel {
+    font-size: 10px;
+    letter-spacing: .08em;
+    line-height: 1.6;
+  }
+
   .supportGrid {
     grid-template-columns: 1fr;
+  }
+
+  .supportCard {
+    padding: 32px 24px 34px;
+  }
+
+  .flowSteps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flowSteps li {
+    position: relative;
+    padding: 12px 0;
+  }
+
+  .flowSteps li + li::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: -13px;
+    width: 1px;
+    height: 26px;
+    margin: 0;
+    background: var(--blue);
+    opacity: .35;
   }
 
   .leadTableRow {
@@ -1625,6 +1828,64 @@ footer {
 
   .leadTableTd {
     padding: 0 20px 20px;
+  }
+
+  .map iframe {
+    height: 300px;
+  }
+
+  .accessInfo {
+    padding: 30px 24px;
+  }
+
+  .contactBtns a {
+    min-width: 100%;
+  }
+
+  .spCtaBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    box-shadow: 0 -6px 24px rgba(19, 24, 32, .16);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .spCtaBar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 13px 12px 12px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-align: center;
+  }
+
+  .spCtaBar a span {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    opacity: .75;
+  }
+
+  .spCtaBar .spCtaTel {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .spCtaBar .spCtaMail {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  body:has(.spCtaBar) footer {
+    padding-bottom: 56px;
   }
 }
 
