@@ -74,7 +74,7 @@
   <div class="heroGrad"></div>
   <div class="progSlickInr">
     <p class="heroBadge">茨城県 土浦市・障害福祉サービス</p>
-    <h2 class="kvTx02">YOU <span>&amp;</span> MORE</h2>
+    <h2 class="kvTx02"><span class="kvWord">YOU</span> <span class="kvWord kvWordAccent">&amp;</span> <span class="kvWord">MORE</span></h2>
     <p class="kvTx03">障がいと共に。<br>あなたともっと楽しくユウモアに。</p>
     <p class="btnBox01_w"><a href="#about">詳しく見る<span class="btnArrow">→</span></a></p>
   </div>
@@ -136,9 +136,9 @@
         <h3>共同生活援助</h3>
         <p class="servicePanelDesc">障がいのある方が地域で安心して暮らすための住まいの場。一人ひとりのペースを大切に、生活を共に支えます。</p>
         <p class="servicePanelStatus">開設中</p>
-        <a class="servicePanelLink" href="#contact">詳しくみる<span>→</span></a>
+        <a class="servicePanelLink" href="service-kyodo.html">詳しくみる<span>→</span></a>
       </div>
-      <div class="servicePanelImg"><img src="images/共同生活援助/28447826_m.jpg" alt="共同生活援助"></div>
+      <a class="servicePanelImg" href="service-kyodo.html" aria-label="共同生活援助の詳細ページへ"><img src="images/共同生活援助/28447826_m.jpg" alt="共同生活援助"></a>
     </article>
 
     <article class="servicePanel reveal">
@@ -174,18 +174,18 @@
     <h2>数字でみる YOU&amp;MORE</h2>
   </div>
   <div class="numbersGrid">
-    <div class="numberItem reveal">
-      <p class="numberValue"><span class="numCount" data-count="3">0</span><span class="numberUnit">つ</span></p>
+    <div class="numItem">
+      <p class="numberValue"><span>3</span><span class="numberUnit">つ</span></p>
       <p class="numberLabel">の事業</p>
       <p class="numberNote">暮らし・働く・医療</p>
     </div>
-    <div class="numberItem reveal">
-      <p class="numberValue"><span class="numCount" data-count="2">0</span><span class="numberUnit">つ</span></p>
-      <p class="numberLabel">の拠点</p>
-      <p class="numberNote">茨城県土浦市内</p>
+    <div class="numItem">
+      <p class="numberValue"><span>2</span><span class="numberUnit">つ</span></p>
+      <p class="numberLabel">の言葉</p>
+      <p class="numberNote">あなた＋もっとたのしく</p>
     </div>
-    <div class="numberItem reveal">
-      <p class="numberValue"><span class="numCount" data-count="1">0</span><span class="numberUnit">つ</span></p>
+    <div class="numItem">
+      <p class="numberValue"><span>1</span><span class="numberUnit">つ</span></p>
       <p class="numberLabel">の想い</p>
       <p class="numberNote">障がいと共に。</p>
     </div>
@@ -329,28 +329,7 @@ var io = new IntersectionObserver(function (entries) {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-document.querySelectorAll('.numCount').forEach(function (el) {
-  var target = parseInt(el.getAttribute('data-count'), 10);
-  var started = false;
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting && !started) {
-        started = true;
-        var start = null;
-        function step(ts) {
-          if (!start) start = ts;
-          var p = Math.min((ts - start) / 1200, 1);
-          el.textContent = Math.floor(p * target);
-          if (p < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  obs.observe(el);
-});
+document.querySelectorAll('.reveal, .numItem').forEach(function (el) { io.observe(el); });
 </script>
 </body>
 </html>
