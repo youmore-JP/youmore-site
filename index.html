@@ -39,9 +39,9 @@
       <li><a href="#">EN</a></li>
     </ul>
 
-    <p class="menuTrigger">
+    <button type="button" class="menuTrigger" aria-expanded="false" aria-controls="gNavSp" aria-label="メニューを開く">
       <span></span><span></span><span></span>
-    </p>
+    </button>
 
   </div>
 
@@ -82,6 +82,32 @@
 </div>
 </section>
 
+<div class="heroMenu">
+  <div class="heroMenuInr">
+    <a href="#about">
+      <div class="heroMenuText">
+        <p class="heroMenuLabel">ABOUT</p>
+        <p class="heroMenuTitle">私たちの想い</p>
+      </div>
+      <span class="heroMenuArrow">→</span>
+    </a>
+    <a href="#service">
+      <div class="heroMenuText">
+        <p class="heroMenuLabel">SERVICE</p>
+        <p class="heroMenuTitle">事業内容</p>
+      </div>
+      <span class="heroMenuArrow">→</span>
+    </a>
+    <a href="#contact">
+      <div class="heroMenuText">
+        <p class="heroMenuLabel">CONTACT</p>
+        <p class="heroMenuTitle">お問い合わせ</p>
+      </div>
+      <span class="heroMenuArrow">→</span>
+    </a>
+  </div>
+</div>
+
 <section id="about">
 <div class="idxWrap02Inner">
   <div class="idxWrap02Text reveal">
@@ -102,39 +128,39 @@
     <h2>事業内容</h2>
     <p class="idxWrap03Lead">暮らし・働く・医療を、ともに。<br>三つの事業で地域の暮らしを支えます。</p>
   </div>
-  <div class="serviceCards">
+  <div class="servicePanels">
 
-    <article class="serviceCard reveal">
-      <div class="serviceCardBg"><img src="images/共同生活援助/28447826_m.jpg" alt="共同生活援助"></div>
-      <div class="serviceCardOverlay"></div>
-      <div class="serviceCardText">
-        <p class="serviceCardLabel">GH ／ グループホーム</p>
+    <article class="servicePanel reveal">
+      <div class="servicePanelText">
+        <p class="servicePanelLabel">GROUP HOME ／ 共同生活援助</p>
         <h3>共同生活援助</h3>
-        <p class="serviceCardDesc">障がいのある方が地域で安心して暮らすための住まいの場。一人ひとりのペースを大切に、生活を共に支えます。</p>
-        <p class="serviceCardStatus">開設中</p>
+        <p class="servicePanelDesc">障がいのある方が地域で安心して暮らすための住まいの場。一人ひとりのペースを大切に、生活を共に支えます。</p>
+        <p class="servicePanelStatus">開設中</p>
+        <a class="servicePanelLink" href="#contact">詳しくみる<span>→</span></a>
       </div>
+      <div class="servicePanelImg"><img src="images/共同生活援助/28447826_m.jpg" alt="共同生活援助"></div>
     </article>
 
-    <article class="serviceCard reveal">
-      <div class="serviceCardBg"><img src="images/就労継続支援/sd_free_img_89.jpg" alt="就労継続支援B型"></div>
-      <div class="serviceCardOverlay"></div>
-      <div class="serviceCardText">
-        <p class="serviceCardLabel">B ／ 働く場</p>
+    <article class="servicePanel reveal">
+      <div class="servicePanelText">
+        <p class="servicePanelLabel">B-TYPE ／ 就労継続支援B型</p>
         <h3>就労継続支援B型</h3>
-        <p class="serviceCardDesc">働く場としての居場所づくり。組み立て・清掃などの生産活動を通して、働く喜びと、自分らしい働き方を見つけるお手伝いをします。</p>
-        <p class="serviceCardStatus soon">開設予定</p>
+        <p class="servicePanelDesc">働く場としての居場所づくり。組み立て・清掃などの生産活動を通して、働く喜びと、自分らしい働き方を見つけるお手伝いをします。</p>
+        <p class="servicePanelStatus soon">開設予定</p>
+        <a class="servicePanelLink" href="#contact">詳しくみる<span>→</span></a>
       </div>
+      <div class="servicePanelImg"><img src="images/就労継続支援/sd_free_img_89.jpg" alt="就労継続支援B型"></div>
     </article>
 
-    <article class="serviceCard reveal">
-      <div class="serviceCardBg"><img src="images/訪問看護/sd_free_img_136.jpg" alt="訪問看護ステーション"></div>
-      <div class="serviceCardOverlay"></div>
-      <div class="serviceCardText">
-        <p class="serviceCardLabel">NS ／ 在宅ケア</p>
+    <article class="servicePanel reveal">
+      <div class="servicePanelText">
+        <p class="servicePanelLabel">VISITING NURSE ／ 訪問看護ステーション</p>
         <h3>訪問看護ステーション</h3>
-        <p class="serviceCardDesc">ご自宅に看護師が伺い、医療的なケアを提供します。暮らしの中での安心を、地域で支えるサービスです。</p>
-        <p class="serviceCardStatus soon">開設予定</p>
+        <p class="servicePanelDesc">ご自宅に看護師が伺い、医療的なケアを提供します。暮らしの中での安心を、地域で支えるサービスです。</p>
+        <p class="servicePanelStatus soon">開設予定</p>
+        <a class="servicePanelLink" href="#contact">詳しくみる<span>→</span></a>
       </div>
+      <div class="servicePanelImg"><img src="images/訪問看護/sd_free_img_136.jpg" alt="訪問看護ステーション"></div>
     </article>
 
   </div>
@@ -234,7 +260,7 @@
   </div>
   <div class="idxWrap06Box02 reveal">
     <div class="map">
-      <iframe src="https://www.google.com/maps?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E5%9C%9F%E6%B5%A6%E5%B8%82%E4%B8%AD%E9%AB%98%E6%B4%A52%E4%B8%81%E7%9B%AE4-11&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps?q=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E5%9C%9F%E6%B5%A6%E5%B8%82%E4%B8%AD%E9%AB%98%E6%B4%A52%E4%B8%81%E7%9B%AE4-11&output=embed" title="YOU&amp;MORE 所在地のGoogleマップ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </div>
@@ -274,9 +300,13 @@
 </footer>
 
 <script>
-document.querySelector('.menuTrigger').addEventListener('click', function () {
-  document.querySelector('#gNavSp').classList.toggle('open');
+var menuBtn = document.querySelector('.menuTrigger');
+menuBtn.addEventListener('click', function () {
+  var sp = document.querySelector('#gNavSp');
+  var open = sp.classList.toggle('open');
   this.classList.toggle('active');
+  this.setAttribute('aria-expanded', open);
+  this.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
 });
 window.addEventListener('scroll', function () {
   var h = document.querySelector('header');
@@ -285,7 +315,9 @@ window.addEventListener('scroll', function () {
 document.querySelectorAll('#gNavSp a').forEach(function (a) {
   a.addEventListener('click', function () {
     document.querySelector('#gNavSp').classList.remove('open');
-    document.querySelector('.menuTrigger').classList.remove('active');
+    menuBtn.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'メニューを開く');
   });
 });
 var io = new IntersectionObserver(function (entries) {

@@ -1,18 +1,19 @@
 /* ============================================================
    YOU&MORE G.K. - JINS Holdings inspired
    clean gothic / white / minimal / blue accent #3860BE
+   full-width visuals, airy whitespace, EN label + JP headline
 ============================================================ */
 :root {
-  --ink: #111111;
-  --muted: #5e5e5e;
-  --faint: #8a8a8a;
-  --line: #e6e6e6;
-  --line-dark: #d4d4d4;
+  --ink: #131820;
+  --muted: #5d646c;
+  --faint: #8a9199;
+  --line: #e6e9ed;
   --bg: #ffffff;
-  --bg-soft: #f2f2f2;
+  --bg-soft: #f5f6f8;
   --blue: #3860be;
   --blue-dark: #2c4d9c;
   --blue-soft: #eef2fb;
+  --navy: #16213a;
   --font: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Yu Gothic", sans-serif;
   --ease: cubic-bezier(.25, .6, .3, 1);
 }
@@ -65,11 +66,10 @@ img {
   transform: none;
 }
 
-.serviceCard.reveal:nth-child(1) { transition-delay: .05s; }
-.serviceCard.reveal:nth-child(2) { transition-delay: .15s; }
-.serviceCard.reveal:nth-child(3) { transition-delay: .25s; }
+.servicePanel.reveal:nth-child(2) { transition-delay: .1s; }
+.servicePanel.reveal:nth-child(3) { transition-delay: .2s; }
 
-.serviceCard.reveal.reveal-done { transition-delay: 0s; }
+.servicePanel.reveal.reveal-done { transition-delay: 0s; }
 
 /* ============================================================
    header
@@ -80,7 +80,7 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, .9);
+  background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -93,7 +93,7 @@ header.scrolled {
 }
 
 .headerInr {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -183,7 +183,7 @@ h1 a .logoName span {
   letter-spacing: .04em;
   padding: 5px 12px;
   color: var(--muted);
-  border: 1px solid var(--line-dark);
+  border: 1px solid var(--line);
 }
 
 .headerLang li:first-child a {
@@ -202,6 +202,11 @@ h1 a .logoName span {
   gap: 5px;
   cursor: pointer;
   padding: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  font: inherit;
 }
 
 .menuTrigger span {
@@ -221,12 +226,12 @@ h1 a .logoName span {
 }
 
 /* ============================================================
-   hero
+   hero (JINS style full-width visual)
 ============================================================ */
 #top .idxWrap01Inr {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 620px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -243,13 +248,13 @@ h1 a .logoName span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 100% top;
+  object-position: 50% 20%;
 }
 
 .heroGrad {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .55) 78%, rgba(0, 0, 0, .72) 100%);
+  background: linear-gradient(to top, rgba(10, 15, 26, .62) 0%, rgba(10, 15, 26, .28) 34%, rgba(10, 15, 26, .05) 62%, rgba(10, 15, 26, .16) 100%);
 }
 
 .fade-in {
@@ -265,10 +270,10 @@ h1 a .logoName span {
 .progSlickInr {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px 10vh;
+  padding: 0 24px 12vh;
   color: #fff;
 }
 
@@ -278,22 +283,22 @@ h1 a .logoName span {
   gap: 10px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .24em;
-  color: #ffffff;
-  margin-bottom: 20px;
+  letter-spacing: .26em;
+  color: #e9eefb;
+  margin-bottom: 22px;
   opacity: 0;
   animation: fadeInUp 1s var(--ease) forwards;
 }
 
 .heroBadge::before {
   content: "";
-  width: 30px;
+  width: 34px;
   height: 1px;
-  background: #fff;
+  background: #9db4e8;
 }
 
 .kvTx02 {
-  font-size: clamp(44px, 8vw, 96px);
+  font-size: clamp(52px, 8.5vw, 108px);
   font-weight: 900;
   letter-spacing: .01em;
   line-height: 1.05;
@@ -310,8 +315,8 @@ h1 a .logoName span {
   font-size: clamp(15px, 2.2vw, 18px);
   font-weight: 500;
   line-height: 2;
-  color: #f2f2f2;
-  margin-bottom: 42px;
+  color: #eef1f6;
+  margin-bottom: 44px;
   opacity: 0;
   animation: fadeInUp 1s .3s var(--ease) forwards;
 }
@@ -332,9 +337,9 @@ h1 a .logoName span {
   gap: 12px;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .14em;
-  padding: 15px 36px;
-  border: 1px solid #fff;
+  letter-spacing: .16em;
+  padding: 15px 38px;
+  border: 1px solid rgba(255, 255, 255, .8);
   border-radius: 999px;
   color: #fff;
   transition: background .3s ease, color .3s ease, transform .3s ease;
@@ -383,6 +388,65 @@ h1 a .logoName span {
 }
 
 /* ============================================================
+   hero quick menu (JINS 3-col: EN label + JP)
+============================================================ */
+.heroMenu {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.heroMenuInr {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.heroMenuInr a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 34px 32px;
+  border-left: 1px solid var(--line);
+  transition: background .25s ease;
+}
+
+.heroMenuInr a:first-child {
+  border-left: none;
+}
+
+.heroMenuInr a:hover {
+  background: var(--bg-soft);
+}
+
+.heroMenuLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.heroMenuTitle {
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+
+.heroMenuArrow {
+  font-size: 16px;
+  color: var(--blue);
+  transition: transform .3s var(--ease);
+}
+
+.heroMenuInr a:hover .heroMenuArrow {
+  transform: translateX(6px);
+}
+
+/* ============================================================
    section labels
 ============================================================ */
 .kvTx01 {
@@ -404,7 +468,7 @@ h1 a .logoName span {
 .idxWrap02Inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 130px 24px;
 }
 
 .idxWrap02Text {
@@ -414,10 +478,10 @@ h1 a .logoName span {
 }
 
 .idxWrap02Text h2 {
-  font-size: clamp(28px, 4.8vw, 54px);
+  font-size: clamp(28px, 4.6vw, 52px);
   font-weight: 900;
-  line-height: 1.65;
-  margin-bottom: 48px;
+  line-height: 1.6;
+  margin-bottom: 52px;
 }
 
 .idxWrap02Line {
@@ -454,185 +518,188 @@ h1 a .logoName span {
 }
 
 /* ============================================================
-   service
+   service (JINS stacked full-width panels)
 ============================================================ */
 #service {
-  background: var(--bg-soft);
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 
 .idxWrap03Inner {
-  max-width: 1360px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 130px 24px;
 }
 
 .idxWrap03Head {
-  text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 80px;
 }
 
 .idxWrap03Head h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(30px, 4.4vw, 50px);
   font-weight: 900;
+  line-height: 1.4;
   margin-bottom: 18px;
 }
 
 .idxWrap03Lead {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 2;
   color: var(--muted);
+  max-width: 46em;
 }
 
-.serviceCards {
+.servicePanel {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+  padding: 72px 0;
 }
 
-.serviceCard {
-  position: relative;
-  aspect-ratio: 1 / 1.15;
-  border-radius: 16px;
-  overflow: hidden;
+.servicePanel:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.servicePanelText {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background: #000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  justify-content: center;
+  padding: 24px 64px 24px 0;
 }
 
-.serviceCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, .2);
+.servicePanelLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  color: var(--blue);
+  margin-bottom: 16px;
 }
 
-.serviceCardBg {
+.servicePanel h3 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 900;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.servicePanelDesc {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 34em;
+  margin-bottom: 28px;
+}
+
+.servicePanelStatus {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  padding: 6px 18px;
+  color: #fff;
+  background: var(--blue);
+  margin-bottom: 28px;
+}
+
+.servicePanelStatus.soon {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.servicePanelLink {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(19, 24, 32, .4);
+  padding-bottom: 4px;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.servicePanelLink span {
+  display: inline-block;
+  transition: transform .3s var(--ease);
+}
+
+.servicePanelLink:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.servicePanelLink:hover span {
+  transform: translateX(5px);
+}
+
+.servicePanelImg {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  aspect-ratio: 3 / 5;
+}
+
+.servicePanelImg img {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-}
-
-.serviceCardBg img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(1.01);
-  transition: transform .9s var(--ease);
+  transition: transform 1s var(--ease);
 }
 
-.serviceCard:hover .serviceCardBg img {
-  transform: scale(1.07);
-}
-
-.serviceCardOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .45) 38%, rgba(0, 0, 0, .1) 62%, rgba(0, 0, 0, .25) 100%);
-  transition: background .4s ease;
-}
-
-.serviceCard:hover .serviceCardOverlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, .15) 65%, rgba(0, 0, 0, .3) 100%);
-}
-
-.serviceCardText {
-  position: relative;
-  z-index: 2;
-  padding: 36px 32px 38px;
-  color: #fff;
-}
-
-.serviceCardLabel {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  color: #c7d4f2;
-  margin-bottom: 12px;
-}
-
-.serviceCard h3 {
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1.45;
-  margin-bottom: 14px;
-}
-
-.serviceCardDesc {
-  font-size: 14px;
-  line-height: 1.95;
-  color: rgba(255, 255, 255, .85);
-  margin-bottom: 22px;
-}
-
-.serviceCardStatus {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  padding: 5px 16px;
-  border: 1px solid rgba(255, 255, 255, .55);
-  color: #fff;
-  background: rgba(255, 255, 255, .12);
-  backdrop-filter: blur(4px);
-}
-
-.serviceCardStatus.soon {
-  border-color: rgba(255, 214, 166, .65);
-  color: #ffe3c2;
-  background: rgba(255, 180, 100, .15);
+.servicePanel:hover .servicePanelImg img {
+  transform: scale(1.05);
 }
 
 /* ============================================================
-   numbers (数字でみる)
+   numbers (JINS style: white, dividers, big figures)
 ============================================================ */
 #numbers {
-  background: var(--bg-soft);
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 
 .numbersInr {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 110px 24px;
+  padding: 130px 24px;
 }
 
 .numbersHead {
-  text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .numbersHead h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 46px);
   font-weight: 900;
+  line-height: 1.4;
 }
 
 .numbersGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .numberItem {
   text-align: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 56px 24px 48px;
-  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  padding: 64px 24px 56px;
+  border-left: 1px solid var(--line);
 }
 
-.numberItem:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, .08);
+.numberItem:first-child {
+  border-left: none;
 }
 
 .numberValue {
-  font-size: clamp(56px, 7vw, 84px);
+  font-size: clamp(64px, 8vw, 96px);
   font-weight: 900;
   line-height: 1;
   color: var(--blue);
@@ -640,17 +707,17 @@ h1 a .logoName span {
   align-items: baseline;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .numberUnit {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--ink);
 }
 
 .numberLabel {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 900;
   margin-bottom: 8px;
 }
@@ -665,23 +732,24 @@ h1 a .logoName span {
    banner (もっとくわしく)
 ============================================================ */
 #banner {
+  background: var(--bg-soft);
   border-bottom: 1px solid var(--line);
 }
 
 .bannerInr {
-  max-width: 1360px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 110px 24px;
+  padding: 130px 24px;
 }
 
 .bannerHead {
-  text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
 }
 
 .bannerHead h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 46px);
   font-weight: 900;
+  line-height: 1.4;
 }
 
 .bannerGrid {
@@ -694,15 +762,15 @@ h1 a .logoName span {
   position: relative;
   display: block;
   aspect-ratio: 16 / 9;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  background: #000;
+  background: var(--navy);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 
 .bannerCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, .2);
+  box-shadow: 0 24px 50px rgba(18, 27, 46, .22);
 }
 
 .bannerBg {
@@ -717,7 +785,7 @@ h1 a .logoName span {
   height: 100%;
   object-fit: cover;
   transform: scale(1.01);
-  transition: transform .9s var(--ease);
+  transition: transform 1s var(--ease);
 }
 
 .bannerCard:hover .bannerBg img {
@@ -727,7 +795,7 @@ h1 a .logoName span {
 .bannerOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .2) 55%, rgba(0, 0, 0, .1) 100%);
+  background: linear-gradient(to top, rgba(14, 20, 34, .82) 0%, rgba(14, 20, 34, .25) 55%, rgba(14, 20, 34, .08) 100%);
 }
 
 .bannerText {
@@ -736,29 +804,29 @@ h1 a .logoName span {
   right: 0;
   bottom: 0;
   z-index: 2;
-  padding: 34px 36px;
+  padding: 36px 40px;
   color: #fff;
 }
 
 .bannerEn {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .24em;
+  letter-spacing: .26em;
   color: #c7d4f2;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .bannerText h3 {
-  font-size: 26px;
+  font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 900;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .bannerLink {
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   border-bottom: 1px solid rgba(255, 255, 255, .6);
   padding-bottom: 3px;
   transition: transform .3s var(--ease);
@@ -776,16 +844,16 @@ h1 a .logoName span {
 }
 
 .idxWrap05Inr {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 130px 24px;
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 72px;
 }
 
 .idxWrap05Box01 h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 46px);
   font-weight: 900;
   margin-bottom: 16px;
 }
@@ -798,7 +866,7 @@ h1 a .logoName span {
   display: flex;
   align-items: flex-start;
   gap: 28px;
-  padding: 26px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -841,9 +909,9 @@ h1 a .logoName span {
 }
 
 .idxWrap06Inr {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 130px 24px;
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 72px;
@@ -851,7 +919,7 @@ h1 a .logoName span {
 }
 
 .idxWrap06Box01 h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 46px);
   font-weight: 900;
   margin-bottom: 20px;
 }
@@ -866,7 +934,7 @@ h1 a .logoName span {
 .idxWrap06Box02 .map {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -882,19 +950,19 @@ h1 a .logoName span {
    contact CTA
 ============================================================ */
 #contact {
-  background: #fff;
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
 
 .contactInr {
   max-width: 900px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 130px 24px;
   text-align: center;
 }
 
 .contactInr h2 {
-  font-size: clamp(26px, 4vw, 40px);
+  font-size: clamp(26px, 4vw, 42px);
   font-weight: 900;
   line-height: 1.6;
   margin-bottom: 26px;
@@ -905,7 +973,7 @@ h1 a .logoName span {
   font-weight: 500;
   line-height: 2.1;
   color: var(--muted);
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .contactBtns {
@@ -920,8 +988,8 @@ h1 a .logoName span {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  min-width: 260px;
-  padding: 24px 36px;
+  min-width: 280px;
+  padding: 26px 40px;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: .02em;
@@ -938,17 +1006,17 @@ h1 a .logoName span {
 }
 
 .contactBtnTel:hover {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, .2);
+  box-shadow: 0 16px 40px rgba(19, 24, 32, .24);
 }
 
 .contactBtnMail {
-  border: 1px solid var(--line-dark);
+  border: 1px solid var(--line);
   color: var(--ink);
 }
 
 .contactBtnMail:hover {
   background: var(--bg-soft);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .08);
+  box-shadow: 0 12px 32px rgba(19, 24, 32, .1);
 }
 
 .contactBtnLabel {
@@ -960,17 +1028,17 @@ h1 a .logoName span {
 }
 
 /* ============================================================
-   footer
+   footer (JINS navy)
 ============================================================ */
 footer {
-  background: var(--bg-soft);
-  color: var(--muted);
+  background: var(--navy);
+  color: rgba(255, 255, 255, .72);
 }
 
 .footerInr {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 64px 24px 40px;
+  padding: 80px 24px 44px;
 }
 
 .footerTop {
@@ -979,17 +1047,18 @@ footer {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .footerLogo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
-  color: var(--ink);
+  color: #fff;
+  letter-spacing: .02em;
 }
 
 .footerLogo span {
-  color: var(--blue);
+  color: #9db4e8;
 }
 
 .footerInr ul {
@@ -1001,26 +1070,26 @@ footer {
 
 .footerInr ul li a {
   font-size: 13px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, .72);
   transition: color .25s ease;
 }
 
 .footerInr ul li a:hover {
-  color: var(--ink);
+  color: #fff;
 }
 
 .footerInfo {
   font-size: 13px;
-  color: var(--faint);
+  color: rgba(255, 255, 255, .62);
   line-height: 2;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  margin-bottom: 28px;
 }
 
 .footerCopy {
   font-size: 12px;
-  color: var(--faint);
+  color: rgba(255, 255, 255, .5);
   letter-spacing: .08em;
 }
 
@@ -1088,38 +1157,65 @@ footer {
     color: var(--blue);
   }
 
-  .serviceCards {
+  .heroMenuInr {
     grid-template-columns: 1fr;
-    gap: 28px;
   }
 
-  .serviceCard {
-    aspect-ratio: 4 / 5;
-    border-radius: 16px;
+  .heroMenuInr a {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding: 24px 16px;
+  }
+
+  .heroMenuInr a:first-child {
+    border-top: none;
+  }
+
+  .servicePanel {
+    grid-template-columns: 1fr;
+    padding: 56px 0;
+    gap: 32px;
+  }
+
+  .servicePanelText {
+    padding: 0;
+  }
+
+  .servicePanelImg {
+    aspect-ratio: 4 / 3;
   }
 
   .idxWrap03Inner {
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .idxWrap02Inner {
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .idxWrap05Inr,
   .idxWrap06Inr {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .numbersGrid {
     grid-template-columns: 1fr;
-    gap: 24px;
+  }
+
+  .numberItem {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding: 48px 20px 40px;
+  }
+
+  .numberItem:first-child {
+    border-top: none;
   }
 
   .numbersInr {
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .bannerGrid {
@@ -1128,7 +1224,7 @@ footer {
   }
 
   .bannerInr {
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .bannerCard {
@@ -1136,10 +1232,14 @@ footer {
   }
 
   .contactInr {
-    padding: 80px 20px;
+    padding: 88px 20px;
   }
 
   .footerInr {
-    padding: 56px 20px 36px;
+    padding: 64px 20px 40px;
+  }
+
+  .footerTop {
+    flex-direction: column;
   }
 }
