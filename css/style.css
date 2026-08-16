@@ -2052,6 +2052,10 @@ footer {
   body:has(.spCtaBar) footer {
     padding-bottom: 56px;
   }
+
+  .mainImg img.heroSlide {
+    object-position: 72% 25%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
