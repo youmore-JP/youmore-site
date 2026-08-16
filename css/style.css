@@ -2053,8 +2053,12 @@ footer {
     padding-bottom: 56px;
   }
 
-  .mainImg img.heroSlide {
-    object-position: 72% 25%;
+  .mainImg img.heroSlide:nth-child(1) {
+    object-position: 55% 25%;
+  }
+
+  .mainImg img.heroSlide:nth-child(2) {
+    object-position: 58% 25%;
   }
 }
 
