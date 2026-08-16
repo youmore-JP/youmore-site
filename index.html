@@ -70,7 +70,10 @@
 
 <section id="top">
 <div class="idxWrap01Inr">
-  <div class="mainImg"><img src="images/2.jpeg" alt="YOU&MOREの風景" class="fade-in"></div>
+  <div class="mainImg">
+    <img src="images/2.jpeg" alt="YOU&MOREの風景" class="heroSlide active">
+    <img src="images/front.png" alt="YOU&MOREの風景" class="heroSlide">
+  </div>
   <div class="heroGrad"></div>
   <div class="progSlickInr">
     <p class="heroBadge">茨城県 土浦市・障害福祉サービス</p>
@@ -337,7 +340,28 @@ var io = new IntersectionObserver(function (entries) {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.reveal, .numItem').forEach(function (el) { io.observe(el); });
+document.querySelectorAll('.reveal, .numItem').forEach(function (el) {
+  if (el.classList.contains('servicePanel')) { return; }
+  io.observe(el);
+});
+
+var ioService = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('inview');
+      ioService.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -15% 0px' });
+document.querySelectorAll('#service .servicePanel.reveal').forEach(function (el) { ioService.observe(el); });
+
+var heroSlides = document.querySelectorAll('.mainImg .heroSlide');
+var heroIdx = 0;
+setInterval(function () {
+  heroSlides[heroIdx].classList.remove('active');
+  heroIdx = (heroIdx + 1) % heroSlides.length;
+  heroSlides[heroIdx].classList.add('active');
+}, 5000);
 </script>
 </body>
 </html>

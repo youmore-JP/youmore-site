@@ -73,16 +73,16 @@ img {
 
 #service .servicePanel.reveal {
   transform: translateX(120px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  transition: opacity 3s var(--ease), transform 3s var(--ease);
 }
 
 #service .servicePanel.reveal.inview {
   transform: none;
 }
 
-#service .servicePanel.reveal:nth-child(1) { transition-delay: .05s; }
-#service .servicePanel.reveal:nth-child(2) { transition-delay: .18s; }
-#service .servicePanel.reveal:nth-child(3) { transition-delay: .31s; }
+#service .servicePanel.reveal:nth-child(1) { transition-delay: .15s; }
+#service .servicePanel.reveal:nth-child(2) { transition-delay: .35s; }
+#service .servicePanel.reveal:nth-child(3) { transition-delay: .55s; }
 
 /* ============================================================
    header
@@ -262,6 +262,18 @@ h1 a .logoName span {
   height: 100%;
   object-fit: cover;
   object-position: 50% 20%;
+}
+
+.mainImg img.heroSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.mainImg img.heroSlide.active {
+  opacity: 1;
+  animation: heroKenburns 3s var(--ease) both;
 }
 
 .heroGrad {
@@ -790,12 +802,12 @@ h1 a .logoName span {
 }
 
 .numItem.inview {
-  animation: numRise .9s var(--ease) forwards;
+  animation: numRise 1.8s var(--ease) forwards;
 }
 
-.numItem:nth-child(1).inview { animation-delay: .05s; }
-.numItem:nth-child(2).inview { animation-delay: .22s; }
-.numItem:nth-child(3).inview { animation-delay: .39s; }
+.numItem:nth-child(1).inview { animation-delay: .1s; }
+.numItem:nth-child(2).inview { animation-delay: .44s; }
+.numItem:nth-child(3).inview { animation-delay: .78s; }
 
 @keyframes numRise {
   from {
@@ -2043,7 +2055,17 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fade-in,
+  .mainImg img.heroSlide {
+    opacity: 0;
+    transition: none;
+  }
+
+  .mainImg img.heroSlide.active {
+    opacity: 1;
+    animation: none;
+  }
+
+  .heroSlide,
   .heroBadge,
   .heroBadge::before,
   .kvTx02 .kvWord,
