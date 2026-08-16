@@ -27,6 +27,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
+  overflow-x: hidden;
 }
 
 body {
@@ -584,6 +585,7 @@ h1 a .logoName span {
 #service {
   background: var(--bg);
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
 }
 
 .idxWrap03Inner {
